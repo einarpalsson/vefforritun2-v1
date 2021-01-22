@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-  <main>
-
-    <% for(let [index, category] of categories.entries()){ %>
-      <section class="new-videos">
-
-        <div class="grid">
-          <div class="row">
-            <div id="placeholder" class="col">
-              <h2>
-                <%=category.title%>
-              </h2>
-              <div class="cateogry_videos">
-                <% category.videos.forEach((video_id) => {%>
-                  <div>
-                    <%=video_id%>
-                  </div>
-                  <% }) %>
-              </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fræðslumyndbandaleigan</title>
+  </head>
+  <body>
+    <header>
+      <div class="grid">
+        <div class="row">
+          <div class="col col-12">
+            <h1 class="title">Fræðslumyndbandaleigan</h1>
           </div>
         </div>
       </div>
-    </section>
-    <%} %>
+    </header>
+    <main>
+      <% for(let [index, category] of categories.entries()){ %>
+      <section class="video-section">
+        <div class="grid">
+          <div class="row">
+            <div id="placeholder" class="col">
+              <h2><%=category.title%></h2>
+            </div>
+          </div>
+          <div class="row">
+            <% category.videos.forEach((video_id) => {%>
+            <div class="col col-4 col-md-6 col-sm-12">
+              <div class="card">
+                <div class="mynd thumbnail">
+                  <a href="#" class="img-link">
+                    <img
+                      src="<% videos[video_id-1].poster %>"
+                      alt="placeholder"
+                    />
+                  </a>
+                  <div class="timestamp-container">
+                    <p id="duration_ID" class="duration"></p>
+                  </div>
+                </div>
 
-
-
-
-
-
-
-
-      <% for(let [index,video] of videos.entries() || []){  %>
-            <%=video.title%>
+                <div class="video">
+                  <a href="#" class="video-title">
+                    <h3 class="card-title-TALA">
+                      <%=videos[video_id-1].title%>
+                    </h3>
+                  </a>
+                  <p class="date_ID"></p>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </section>
       <%} %>
-
-  </main>
-
-
-</body>
+      <!-- <% for(let [index,video] of videos.entries() || []){ %>
+      <%=video.title%> <%} %> -->
+    </main>
+  </body>
 </html>

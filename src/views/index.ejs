@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <main>
+
+    <% for(let [index, category] of categories.entries()){ %>
+      <section class="new-videos">
+
+        <div class="grid">
+          <div class="row">
+            <div id="placeholder" class="col">
+              <h2>
+                <%=category.title%>
+              </h2>
+              <div class="cateogry_videos">
+                <% category.videos.forEach((video_id) => {%>
+                  <div>
+                    <%=video_id%>
+                  </div>
+                  <% }) %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%} %>
+
+
+
+
+
+
+
+
+      <% for(let [index,video] of videos.entries() || []){  %>
+            <%=video.title%>
+      <%} %>
+
+  </main>
+
+
+</body>
+</html>

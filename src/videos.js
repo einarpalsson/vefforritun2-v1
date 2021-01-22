@@ -1,26 +1,22 @@
 const express = require('express');
 const app = express();
+const router = express.Router();
 const port = 3000;
+const data = require('../videos.json');
 
-app.get('/', (req, res) => {
-  res.send('Hello Bjarni');
-  console.log(res.send);
+console.log(router)
+
+app.set('view engine', 'ejs');
+
+app.get('/videos', (req, res, next) => {
+  res.render('./index.ejs', data)
+  console.log(data);
 });
 
-app.use('/static', express.static('public'));
+app.listen(port);
 
-app.post('/', (req, res) => {
-  res.send('Got a POST request');
-});
 
-app.put('/user', (req, res) => {
-  res.send('Got a PUT request from /user');
-});
 
-app.delete('/user', (req, res) => {
-  res.send('Got a DELETE request at /user');
-});
-
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+// app.get('/test', (req, res, next) => {
+//   res.send(index)
+// });

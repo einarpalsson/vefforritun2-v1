@@ -4,7 +4,8 @@
   "description": "[Kynning í fyrirlestri](https://youtu.be/pCEHnurbuCU).",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --source-map-embed styles.scss styles.css"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "node-sass": "^5.0.0",
     "nodemon": "^2.0.7"
   }
 }

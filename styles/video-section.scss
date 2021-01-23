@@ -1,0 +1,14 @@
+@import 'styles/config';
+
+.headline {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.line {
+  max-width: $max-width;
+  background-color: $color-1;
+  height: 1px;
+  margin: 2rem 0;
+  text-align: center;
+}

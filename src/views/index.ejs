@@ -3,18 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- <link rel="stylesheet" href="/css/grid-overlay.css" /> -->
     <title>Fræðslumyndbandaleigan</title>
   </head>
   <body>
-    <header>
-      <div class="grid">
-        <div class="row">
-          <div class="col col-12">
-            <h1 class="title">Fræðslumyndbandaleigan</h1>
-          </div>
-        </div>
-      </div>
-    </header>
+    <%- include('header'); -%>
     <main>
       <% for(let [index, category] of categories.entries()){ %>
       <section class="video-section">
@@ -31,12 +25,12 @@
                 <div class="mynd thumbnail">
                   <a href="#" class="img-link">
                     <img
-                      src="<% videos[video_id-1].poster %>"
+                      src="<%= videos[video_id-1].poster %>"
                       alt="placeholder"
                     />
                   </a>
                   <div class="timestamp-container">
-                    <p id="duration_ID" class="duration"></p>
+                    <p id="duration_ID" class="duration">00:00</p>
                   </div>
                 </div>
 
@@ -46,17 +40,25 @@
                       <%=videos[video_id-1].title%>
                     </h3>
                   </a>
-                  <p class="date_ID"></p>
+                  <p class="date_ID">Fyrir 246 árum</p>
                 </div>
               </div>
             </div>
             <% }) %>
           </div>
         </div>
+        <div class="grid">
+          <div class="row">
+            <div class="col offset-col-1 col-10">
+              <div class="line"></div>
+            </div>
+          </div>
+        </div>
       </section>
       <%} %>
       <!-- <% for(let [index,video] of videos.entries() || []){ %>
       <%=video.title%> <%} %> -->
+      <%- include('footer'); -%>
     </main>
   </body>
 </html>

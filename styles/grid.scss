@@ -1,0 +1,67 @@
+@import 'styles/config';
+
+.grid {
+  margin: 0 auto;
+  max-width: $max-width;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.col {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: percentage($i / $grid-columns);
+  }
+}
+
+@for $i from 1 through $offset-columns {
+  .offset-col-#{$i} {
+    margin-left: percentage($i / $grid-columns);
+  }
+}
+
+@media (max-width: 899px) {
+  @for $i from 1 through $grid-columns {
+    .col-md-#{$i} {
+      width: percentage($i / $grid-columns);
+    }
+  }
+}
+
+@for $i from 1 through $offset-columns {
+  .offset-col-md-#{$i} {
+    margin-left: percentage($i / $grid-columns);
+  }
+}
+
+@media (max-width: 499px) {
+  @for $i from 1 through $grid-columns {
+    .col-sm-#{$i} {
+      width: percentage($i / $grid-columns);
+    }
+  }
+
+  @for $i from 1 through $grid-columns {
+    .offset-sm-col-#{$i} {
+      margin-left: percentage($i / $grid-columns);
+    }
+  }
+}
+
+@media (max-width: 1432px) {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

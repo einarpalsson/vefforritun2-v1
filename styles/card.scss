@@ -1,0 +1,41 @@
+@import 'styles/config';
+
+a > img {
+  height: 250px;
+  width: 100%;
+}
+
+.img-link {
+  display: inline-block;
+  width: 100%;
+}
+
+.card {
+  margin: 1.5rem 0;
+}
+
+.video {
+  margin: 0.5rem 0;
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+.timestamp-container {
+  position: relative;
+}
+
+.duration {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 15px;
+  color: #eee;
+  font-size: 1rem;
+  position: absolute;
+  right: 15px;
+  text-align: center;
+}

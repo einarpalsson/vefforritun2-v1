@@ -6,9 +6,9 @@
 }
 
 .line {
-  max-width: $max-width;
   background-color: $color-1;
   height: 1px;
   margin: 2rem 0;
+  max-width: $max-width;
   text-align: center;
 }

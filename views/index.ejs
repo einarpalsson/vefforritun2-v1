@@ -1,0 +1,53 @@
+<%- include('header'); -%>
+<main>
+  <% for(let [index, category] of json.categories.entries()){ %>
+  <section class="video-section">
+    <div class="grid">
+      <div class="row">
+        <div id="placeholder" class="col">
+          <h2><%=category.title%></h2>
+        </div>
+      </div>
+      <div class="row">
+        <% category.videos.forEach((video_id) => {%>
+        <div class="col col-4 col-md-6 col-sm-12">
+          <div class="card">
+            <div class="mynd thumbnail">
+              <a href="/<%= json.videos[video_id-1].id %>" class="img-link">
+                <img
+                  src="<%= json.videos[video_id-1].poster %>"
+                  alt="placeholder"
+                />
+              </a>
+              <div class="timestamp-container">
+                <p id="duration_ID" class="duration">
+                  <%= timestamp(json.videos[video_id-1].duration) %>
+                </p>
+              </div>
+            </div>
+
+            <div class="video">
+              <a href="/<%= json.videos[video_id-1].id %>" class="video-title">
+                <h3 class="card-title-TALA">
+                  <%= json.videos[video_id-1].title%>
+                </h3>
+              </a>
+              <p class="date_ID">
+                <%= dateCreated(json.videos[video_id-1].created) %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="row">
+        <div class="col offset-col-1 col-10">
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <%} %> <%- include('footer'); -%>
+</main>

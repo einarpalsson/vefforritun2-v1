@@ -4,8 +4,12 @@
   "description": "[Kynning í fyrirlestri](https://youtu.be/pCEHnurbuCU).",
   "main": ".eslintrc.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass --source-map-embed styles.scss styles.css"
+    "start": "nodemon app.js",
+    "stylelint": "stylelint styles.scss ./**/*.scss",
+    "eslint": "eslint ./**/*.js",
+    "eslint-fix": "eslint --fix --ext ./src/index.js.",
+    "test": "stylelint styles.scss ./**/*.scss eslint ./**/*.js",
+    "sass": "node-sass --source-map-embed styles.scss ./public/css/styles.css"
   },
   "repository": {
     "type": "git",
@@ -22,7 +26,13 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "node-sass": "^5.0.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "stylelint": "^13.9.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-config-standard": "^20.0.0"
   }
 }
